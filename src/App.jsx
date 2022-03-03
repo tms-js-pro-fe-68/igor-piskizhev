@@ -10,7 +10,7 @@ function App({ prop1 }) {
       <header className="App-header">
         {prop1}
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
+        <p>Hello Igor + React!</p>
         <p>
           <button type="button" onClick={() => setCount( c => c + 1)}>
             count is: {count}
