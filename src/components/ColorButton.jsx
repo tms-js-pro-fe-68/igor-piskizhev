@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function ColorButton() {
     const [color, setColor] = useState('green');
     function ChangeState() {
-        return color === 'green'? setColor('blue') : setColor('green')
+        return setColor(prevColor => prevColor === 'green'? setColor('blue') : setColor('green'))
     }
     return (
         <div>
