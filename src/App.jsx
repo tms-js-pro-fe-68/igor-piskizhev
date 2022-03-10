@@ -1,22 +1,24 @@
-import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import ColorButton from './components/ColorButton';
+import CountButton from './components/CountButton';
+
+
 
 function App({ prop1 }) {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <header className="App-header">
         {prop1}
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Igor + React!</p>
         <p>
-          <button type="button" onClick={() => setCount( c => c + 1)}>
-            count is: {count}
-          </button>
+          Hello 
         </p>
         <p>
+          <CountButton/>
+          <ColorButton />
+        </p>
+        {/* <p>
           Edit <code>App.jsx</code> and save to test HMR updates.
         </p>
         <p>
@@ -37,7 +39,7 @@ function App({ prop1 }) {
           >
             Vite Docs
           </a>
-        </p>
+        </p> */}
       </header>
     </div>
   )
