@@ -28,10 +28,12 @@ export default function GetStat(){
     <div >
         {chackFact.map((fact) => 
         <div key={fact.id}
-        style = {{background:'black',
-                   margin: '10px',
-                   padding: '10px',
-                   width: '300px' }}>
+        style = {{
+                background:'white',
+                color: 'red',
+                margin: '10px',
+                padding: '10px',
+                width: '300px' }}>
                        {fact.value}
         </div> 
          )}
