@@ -18,7 +18,7 @@ export default function GetStat(){
    return (
     <>
     <p>
-        {loading && 'Loading...'}
+        {loading && 'Loading, wait ...'}
     </p>
     <button 
         type = 'button'
@@ -29,11 +29,13 @@ export default function GetStat(){
         {chackFact.map((fact) => 
         <div key={fact.id}
         style = {{
-                background:'white',
-                color: 'red',
+                background:'rgba(255, 88, 42, 0.5)',
+                color: 'white',
+                fontWeight: '180',
                 margin: '10px',
                 padding: '10px',
-                width: '300px' }}>
+                width: '300px',
+                borderRadius : '3px'}}>
                        {fact.value}
         </div> 
          )}

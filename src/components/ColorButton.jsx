@@ -12,7 +12,7 @@ export default function ColorButton() {
             style={{
                 background : color,
                 margin : '10px',
-                padding : '30px'
+                padding : '10px'
             }}
             type = 'button'
             onClick={changeState}

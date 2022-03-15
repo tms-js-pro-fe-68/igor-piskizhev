@@ -1,4 +1,4 @@
-import logo from './logo.svg'
+import logo from './logoChack.png'
 import './App.css'
 import ColorButton from './components/ColorButton';
 import CountButton from './components/CountButton';
@@ -11,14 +11,9 @@ function App() {
       <header className="App-header">
         
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello 
-        </p>
+        <GetStat/>
         <CountButton/>
         <ColorButton/>
-        <GetStat/>
-
-        
       </header>
     </div>
   )
