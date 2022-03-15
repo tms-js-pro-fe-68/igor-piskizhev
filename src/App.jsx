@@ -2,7 +2,7 @@ import logo from './logo.svg'
 import './App.css'
 import ColorButton from './components/ColorButton';
 import CountButton from './components/CountButton';
-
+import GetStat from './components/DataFetch';
 
 
 function App() {
@@ -15,7 +15,10 @@ function App() {
           Hello 
         </p>
         <CountButton/>
-        <ColorButton />
+        <ColorButton/>
+        <GetStat/>
+
+        
       </header>
     </div>
   )
