@@ -11,7 +11,7 @@ function fetchPass(password,email){
     }),
   }).then((response) => {
     if (response.ok) {
-        console.log('PASSWORD: ', password);
+        console.log('YOUR PASSWORD: ', password);
     }
     throw Error;
   }).catch((err)=>{
