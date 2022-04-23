@@ -1,4 +1,3 @@
-import { flexbox, height } from "@mui/system";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -8,7 +7,7 @@ import FormAdd from "../../components/FormAdd";
 export default function HomePage() {
     const navigate = useNavigate();
     useEffect(()=>{
-        if (!sessionStorage.token) navigate ('/login');
+        if (!sessionStorage.token) navigate ('/login',{ replace: true });
     },[])
     return (
         <>

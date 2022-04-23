@@ -24,7 +24,7 @@ const handleSubmit = async (values,{setSubmitting}) => {
     sessionStorage.token = data.token
     sessionStorage.email = data.email
     api.setup(data.token)
-    navigate('/homepage', { replace: true })
+    navigate('/', { replace: true })
     setSubmitting(false)
 }
 
@@ -39,7 +39,7 @@ const handleSubmit = async (values,{setSubmitting}) => {
   });
   
   useEffect(()=>{
-      if (sessionStorage.token) navigate ('/homepage');
+      if (sessionStorage.token) navigate ('/',{ replace: true });
   },[])
   return (
     <Box
