@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AccountCircle from '@mui/icons-material/AccountCircle';
-
 import FormAdd from "../../components/FormAdd";
+import UseGetRequest from "../../components/UseGetRequest";
 
 export default function HomePage() {
     const navigate = useNavigate();
@@ -42,6 +42,7 @@ export default function HomePage() {
                 
             </div>
         <FormAdd />
+        <UseGetRequest/>
         </>
         
     )
