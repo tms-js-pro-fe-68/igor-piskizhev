@@ -3,7 +3,7 @@ import { useEffect,useState } from "react"
 
 const api = 'https://api.chucknorris.io/jokes/random';
 
-function MyCustomHook() {
+function useMyCustomHook() {
     const [chackFact,setChackFact] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
     const [errors,setError] = useState([]);
@@ -37,7 +37,7 @@ function MyCustomHook() {
 
 
 export default function UseGetRequest(){
-    const { isLoading,chackFact, errors, setCount } = MyCustomHook();
+    const { isLoading,chackFact, errors, setCount } = useMyCustomHook();
     return (
         <Box sx={{
             display: 'grid',
