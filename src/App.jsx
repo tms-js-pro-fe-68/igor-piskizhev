@@ -1,20 +1,22 @@
-import logo from './logoChack.png'
-import './App.css'
-import ColorButton from './components/ColorButton';
-import CountButton from './components/CountButton';
-import GetStat from './components/DataFetch';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import LoginPage from './pages/LoginPage'
+import HomePage from './pages/HomePage'
+import FormAdd from './components/FormAdd'
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-        <img src={logo} className="App-logo" alt="logo" />
-        <GetStat/>
-        <CountButton/>
-        <ColorButton/>
-      </header>
+
+      <Router>
+        <Routes>
+          <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/' element={<HomePage/>} exact/>
+          <Route path='/FormAdd' element={<FormAdd/>}/>
+        </Routes>
+      </Router>
+
     </div>
   )
 }
