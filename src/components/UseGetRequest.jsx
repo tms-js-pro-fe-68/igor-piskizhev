@@ -43,7 +43,7 @@ export default function UseGetRequest(){
             display: 'grid',
             direction: 'column',
             gap:1,
-            p:32,
+            p:5,
         }}>
         <p>
             Errors: {errors}
@@ -53,6 +53,7 @@ export default function UseGetRequest(){
         </p>
         <button 
             type = 'button'
+            className="border border-black"
             onClick = {()=>{setCount(c => c + 1)}}>
                 Try to click
         </button>

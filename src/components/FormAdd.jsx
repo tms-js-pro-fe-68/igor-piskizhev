@@ -21,8 +21,8 @@ export default function FormAdd() {
   return (
     <Box
     sx={{
-      height: '100vh',
-      width: '100vw',
+      // height: '100vh',
+      // width: '100v',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -50,7 +50,11 @@ export default function FormAdd() {
           <Form style={{display:'grid', width:'100%', gap: 4}}>
             <label style={{display:'grid', gridTemplateColumns:'1fr 2fr'}}>
               Name
-              <Field name="name"  />
+              <Field name="name" 
+                sx={{
+                  border:'1px solid black'
+                }}
+              />
               {errors.name && touched.name ? (
              <div style={{color:'red'}}>{errors.name}</div>
                ) : null}
