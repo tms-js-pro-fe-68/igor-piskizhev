@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function ColorButton() {
     const [color, setColor] = useState('green');
-    function ChangeState() {
+    function changeState() {
         return setColor(prevColor => prevColor === 'green'? setColor('blue') : setColor('green'))
     }
     return (
@@ -12,12 +12,10 @@ export default function ColorButton() {
             style={{
                 background : color,
                 margin : '10px',
-                padding : '30px'
+                padding : '10px'
             }}
             type = 'button'
-            onClick={()=>{
-                ChangeState();
-            }}
+            onClick={changeState}
             >
             TextColor
             </button>
