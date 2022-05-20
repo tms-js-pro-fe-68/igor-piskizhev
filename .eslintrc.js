@@ -7,6 +7,8 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'prettier',
+    'eslint:recommended',
+    'plugin:react/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -15,9 +17,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
   rules: {
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 0,
