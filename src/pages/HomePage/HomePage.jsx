@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import FormAdd from "../../components/FormAdd";
-import UseGetRequest from "../../components/UseGetRequest";
+import GetQueryRequest from "../../components/GetQueryRequest";
 import StyledList from "../../components/StyledList";
 
 export default function HomePage() {
@@ -43,7 +43,7 @@ export default function HomePage() {
                 
             </div>
         <FormAdd />
-        <UseGetRequest/>
+        <GetQueryRequest/>
         <StyledList/>
         </>
         
