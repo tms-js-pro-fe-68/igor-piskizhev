@@ -4,14 +4,18 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import FormAdd from "../../components/FormAdd";
 import GetQueryRequest from "../../components/GetQueryRequest";
 import StyledList from "../../components/StyledList";
+import Page from "../../components/Page";
+import { bgcolor } from "@mui/system";
 
 export default function HomePage() {
     const navigate = useNavigate();
-    useEffect(()=>{
-        if (!sessionStorage.token) navigate ('/login',{ replace: true });
-    },[])
+    // useEffect(()=>{
+    //     if (!sessionStorage.token) navigate ('/login',{ replace: true });
+    // },[])
+
+   
     return (
-        <>
+        <Page>
             <div
                 style={{
                     display: 'flex',
@@ -28,7 +32,10 @@ export default function HomePage() {
                     style={{
                         display :'flex',
                         alignItems: 'center',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        backgroundColor:'white',
+                        color: "black"
+
                     }}
                     onClick={
                         ()=>{
@@ -45,7 +52,7 @@ export default function HomePage() {
         <FormAdd />
         <GetQueryRequest/>
         <StyledList/>
-        </>
+        </Page>
         
     )
 }

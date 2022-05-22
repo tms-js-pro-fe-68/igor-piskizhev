@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import { Button, Paper, TextField,Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api';
+import Page from '../../components/Page';
 
 export default function LoginPage () {
 const navigate = useNavigate();
@@ -38,11 +39,8 @@ const handleSubmit = async (values,{setSubmitting}) => {
     onSubmit: handleSubmit,
   });
   
-  useEffect(()=>{
-      if (sessionStorage.token) navigate ('/',{ replace: true });
-  },[])
   return (
-    <Box
+    <Page
     sx={{
       height: '100vh',
       width: '100vw',
@@ -84,7 +82,7 @@ const handleSubmit = async (values,{setSubmitting}) => {
             </Button>
         </form>
         </Paper>
-      </Box>
+      </Page>
     );
 }
 ;
