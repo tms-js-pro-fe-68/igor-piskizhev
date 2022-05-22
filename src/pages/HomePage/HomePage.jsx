@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import FormAdd from "../../components/FormAdd";
@@ -8,11 +7,6 @@ import Page from "../../components/Page";
 
 export default function HomePage() {
     const navigate = useNavigate();
-    // useEffect(()=>{
-    //     if (!sessionStorage.token) navigate ('/login',{ replace: true });
-    // },[])
-
-   
     return (
         <Page>
             <div
@@ -46,7 +40,6 @@ export default function HomePage() {
                         <AccountCircle />
                          SIGN OUT
                     </button>
-                
             </div>
         <FormAdd />
         <GetQueryRequest/>

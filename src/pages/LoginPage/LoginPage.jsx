@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { Button, Paper, TextField,Box } from '@mui/material';
+import { Button, Paper, TextField} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api';
 import Page from '../../components/Page';
@@ -28,17 +27,14 @@ const handleSubmit = async (values,{setSubmitting}) => {
     navigate('/', { replace: true })
     setSubmitting(false)
 }
-
-
-  const formik = useFormik({
-    initialValues: {
+const formik = useFormik({
+      initialValues: {
       email: '',
       password: '',
     },
     validationSchema: validationSchema1,
     onSubmit: handleSubmit,
   });
-  
   return (
     <Page
     sx={{
@@ -57,7 +53,6 @@ const handleSubmit = async (values,{setSubmitting}) => {
         flexDirection: 'column'
           }}>
             <TextField
-            // fullWidth
             id="email"
             name="email"
             label="Email"
@@ -67,7 +62,6 @@ const handleSubmit = async (values,{setSubmitting}) => {
             helperText={formik.touched.email && formik.errors.email}
             />
             <TextField
-            // fullWidth
             id="password"
             name="password"
             label="Password"
@@ -85,7 +79,7 @@ const handleSubmit = async (values,{setSubmitting}) => {
       </Page>
     );
 }
-;
+
 
 
 

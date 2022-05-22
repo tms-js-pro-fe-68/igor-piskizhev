@@ -14,15 +14,11 @@ const FormSchema = Yup.object().shape({
   .required('Price is required*'),
   type: Yup.string().min(2).required('Please choose one below!')
 })
-
-
 export default function FormAdd() {
   const initialValues = { name: '', description: '', price: '' , type: ''};
   return (
     <Box
     sx={{
-      // height: '100vh',
-      // width: '100v',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -51,7 +47,7 @@ export default function FormAdd() {
             <label style={{display:'grid', gridTemplateColumns:'1fr 2fr'}}>
               Name
               <Field name="name" 
-                sx={{
+                style={{
                   border:'1px solid black'
                 }}
               />
@@ -59,26 +55,34 @@ export default function FormAdd() {
              <div style={{color:'red'}}>{errors.name}</div>
                ) : null}
             </label>
+
             <label style={{display:'grid', gridTemplateColumns:'1fr 2fr'}}>
               Description(optional)
-              <Field name="description" />
+              <Field name="description"
+                style={{
+                  border:'1px solid black'
+                }} />
             </label>
+
             <label style={{display:'grid', gridTemplateColumns:'1fr 2fr'}}>
               Price(50-500)
-              <Field name="price" />
+              <Field name="price" 
+                style={{
+                  border:'1px solid black'
+                }}/>
               {errors.price && touched.price ? (
              <div style={{color:'red'}}>{errors.price}</div>
              ) : null}
             </label>
+            
             <div id="my-radio-group">Please choose type of clothes:</div>
-
             <div role="group" aria-labelledby="my-radio-group" style={{display: 'grid', gridAutoRows: 'auto'}}>
             <label>
-              <Field type="radio" name="type" value="tshirt" />
+              <Field type="radio" name="type" value="tshirt"  />
               tshirt
             </label>
             <label>
-              <Field type="radio" name="type" value="jeans" />
+              <Field type="radio" name="type" value="jeans"  />
               jeans
             </label>
             <label>
@@ -89,7 +93,7 @@ export default function FormAdd() {
              <div style={{color:'red'}}>{errors.type}</div>
              ) : null}
           </div>
-            <button type="submit">Submit</button>
+            <button type="submit" style={{backgroundColor:'gray'}}>Submit</button>
           </Form>
         </Box>
         )}
