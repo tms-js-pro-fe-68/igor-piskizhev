@@ -5,7 +5,6 @@ import FormAdd from "../../components/FormAdd";
 import GetQueryRequest from "../../components/GetQueryRequest";
 import StyledList from "../../components/StyledList";
 import Page from "../../components/Page";
-import { bgcolor } from "@mui/system";
 
 export default function HomePage() {
     const navigate = useNavigate();

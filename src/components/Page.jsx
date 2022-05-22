@@ -8,23 +8,23 @@ const Context = createContext()
 export const usePageContext = () => useContext(Context)
 
 export default function Page({ sx, ...otherProps }) {
-    const [isIni, setIsIni] = useState(false);
+    const [isInitialized, setIsInitialized] = useState(false);
 
     const navigate = useNavigate()
     const navigateToLogin = () => navigate('/login', { replace: true })
 
   useEffect(() => {
     if (sessionStorage.token){
-        api.setup(sessionStorage.token)
-        setIsIni(true)
+        api.setup(sessionStorage.token);
+        setIsInitialized(true)
     }
     else {
      navigateToLogin()
     }
   }, [])
-    console.log(`isInitialized   ${isIni}`);
+    console.log(`isInitialized   ${isInitialized}`);
   return (
-    <Context.Provider value={{isIni}}>
+    <Context.Provider value={{isInitialized}}>
     <Box
       sx={{
         height: '100vh',

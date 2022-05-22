@@ -5,7 +5,14 @@ import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import FormAdd from './components/FormAdd'
  
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+    },
+  },
+}
+)
 
 function App() {
 
