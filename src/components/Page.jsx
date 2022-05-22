@@ -22,7 +22,6 @@ export default function Page({ sx, ...otherProps }) {
      navigateToLogin()
     }
   }, [])
-    console.log(`isInitialized   ${isInitialized}`);
   return (
     <Context.Provider value={{isInitialized}}>
     <Box

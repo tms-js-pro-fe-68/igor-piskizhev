@@ -4,12 +4,11 @@ import { usePageContext } from "./Page";
 
 export default function GetQueryRequest(){
     const {isInitialized} = usePageContext();
-    console.log(isInitialized);
+    console.log(`Initialized Status on Query ${isInitialized}`);
     const {isLoading, error, data } = useQuery('facts',() => 
     fetch('https://api.chucknorris.io/jokes/random')
-    .then(res => res.json()),
+    .then(res => res.json()).then(result => result.value),
      {enabled:isInitialized} )
-     console.log(data);
         if (isLoading) return 'Loading...'
         if (error) return (`An error has occurred: ${error.message}` )
         
@@ -19,10 +18,12 @@ export default function GetQueryRequest(){
                 <Typography
                     m={4}
                     justifyContent='center'>
-                     {/* {data}  */}
+                       {data}<br/>
                     --- Refresh to get NEW QUERY FACT ---
                 </Typography>
             </Paper>
         </Box>
     )
 }
+
+
