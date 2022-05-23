@@ -1,17 +1,14 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import FormAdd from "../../components/FormAdd";
-import UseGetRequest from "../../components/UseGetRequest";
+import GetQueryRequest from "../../components/GetQueryRequest";
 import StyledList from "../../components/StyledList";
+import Page from "../../components/Page";
 
 export default function HomePage() {
     const navigate = useNavigate();
-    useEffect(()=>{
-        if (!sessionStorage.token) navigate ('/login',{ replace: true });
-    },[])
     return (
-        <>
+        <Page>
             <div
                 style={{
                     display: 'flex',
@@ -28,7 +25,10 @@ export default function HomePage() {
                     style={{
                         display :'flex',
                         alignItems: 'center',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        backgroundColor:'white',
+                        color: "black"
+
                     }}
                     onClick={
                         ()=>{
@@ -40,12 +40,11 @@ export default function HomePage() {
                         <AccountCircle />
                          SIGN OUT
                     </button>
-                
             </div>
         <FormAdd />
-        <UseGetRequest/>
+        <GetQueryRequest/>
         <StyledList/>
-        </>
+        </Page>
         
     )
 }

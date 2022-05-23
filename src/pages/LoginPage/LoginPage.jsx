@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { Button, Paper, TextField,Box } from '@mui/material';
+import { Button, Paper, TextField} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api';
+import Page from '../../components/Page';
 
 export default function LoginPage () {
 const navigate = useNavigate();
@@ -27,22 +27,16 @@ const handleSubmit = async (values,{setSubmitting}) => {
     navigate('/', { replace: true })
     setSubmitting(false)
 }
-
-
-  const formik = useFormik({
-    initialValues: {
+const formik = useFormik({
+      initialValues: {
       email: '',
       password: '',
     },
     validationSchema: validationSchema1,
     onSubmit: handleSubmit,
   });
-  
-  useEffect(()=>{
-      if (sessionStorage.token) navigate ('/',{ replace: true });
-  },[])
   return (
-    <Box
+    <Page
     sx={{
       height: '100vh',
       width: '100vw',
@@ -59,7 +53,6 @@ const handleSubmit = async (values,{setSubmitting}) => {
         flexDirection: 'column'
           }}>
             <TextField
-            // fullWidth
             id="email"
             name="email"
             label="Email"
@@ -69,7 +62,6 @@ const handleSubmit = async (values,{setSubmitting}) => {
             helperText={formik.touched.email && formik.errors.email}
             />
             <TextField
-            // fullWidth
             id="password"
             name="password"
             label="Password"
@@ -84,10 +76,10 @@ const handleSubmit = async (values,{setSubmitting}) => {
             </Button>
         </form>
         </Paper>
-      </Box>
+      </Page>
     );
 }
-;
+
 
 
 
