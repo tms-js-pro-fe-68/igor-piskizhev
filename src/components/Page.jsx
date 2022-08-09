@@ -19,7 +19,7 @@ export default function Page({ sx, ...otherProps }) {
         }
         }, [])
   return (
-    <Context.Provider value={{isInitialized}}>
+    <Context.Provider value={isInitialized}>
     <Box
       sx={{
         height: '100vh',
